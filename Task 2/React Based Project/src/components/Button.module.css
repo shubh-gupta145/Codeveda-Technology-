@@ -1,0 +1,77 @@
+.btn {
+  position: relative;
+  height: 68px;
+  border: none;
+  border-radius: 16px;
+  font-family: 'DM Mono', monospace;
+  font-size: 1.15rem;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.1s, box-shadow 0.15s, background 0.15s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.btn:active {
+  transform: scale(0.93);
+}
+
+.num {
+  background: var(--btn-num-bg);
+  color: var(--text);
+  font-weight: 400;
+}
+.num:hover { background: var(--btn-num-hover); }
+
+.fn {
+  background: var(--btn-fn-bg);
+  color: var(--btn-fn-color);
+  font-weight: 500;
+}
+.fn:hover { filter: brightness(1.12); }
+
+.op {
+  background: var(--btn-op-bg);
+  color: var(--btn-op-color);
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+.op:hover { background: var(--btn-op-hover); }
+
+.eq {
+  background: linear-gradient(135deg, #7c3aed, #a855f7);
+  color: #fff;
+  font-size: 1.4rem;
+  box-shadow: 0 6px 20px var(--btn-eq-shadow);
+}
+.eq:hover {
+  filter: brightness(1.1);
+  box-shadow: 0 8px 28px var(--btn-eq-shadow);
+}
+
+.wide {
+  grid-column: span 2;
+  justify-content: flex-start;
+  padding-left: 24px;
+}
+
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255,255,255,0.15);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.btn:active .ripple {
+  animation: ripple 0.35s ease-out;
+}
+
+@keyframes ripple {
+  0%   { width: 0; height: 0; opacity: 0.5; }
+  100% { width: 200px; height: 200px; opacity: 0; }
+}

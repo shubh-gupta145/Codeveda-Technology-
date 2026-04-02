@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Syne:wght@400;700;800&display=swap');
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'DM Mono', monospace;
+  transition: background 0.3s;
+  padding: 20px;
+}
+
+.dark {
+  background: radial-gradient(ellipse at 30% 20%, #1a1035 0%, #0d0d0f 60%);
+}
+
+.light {
+  background: radial-gradient(ellipse at 70% 20%, #e8e3fc 0%, #f0eef8 60%);
+}
+
+.calcWrapper {
+  width: 340px;
+  border-radius: 28px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  position: relative;
+  background: var(--surface);
+}
+
+.calcWrapper::after {
+  content: "Keyboard supported";
+  display: block;
+  text-align: center;
+  padding: 10px;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  opacity: 0.5;
+  border-top: 1px solid var(--border);
+}
